@@ -12,6 +12,8 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import com.daimajia.androidanimations.library.Techniques;
+import com.daimajia.androidanimations.library.YoYo;
 import com.squareup.okhttp.Call;
 import com.squareup.okhttp.Callback;
 import com.squareup.okhttp.OkHttpClient;
@@ -94,6 +96,7 @@ public class MainActivity extends ActionBarActivity {
                         @Override
                         public void run() {
                             toggleRefresh();
+                            YoYo.with(Techniques.FadeInUp).duration(350).playOn(mTemperatureLabel);
                         }
                     });
 
